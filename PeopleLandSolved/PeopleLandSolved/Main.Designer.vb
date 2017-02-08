@@ -55,7 +55,7 @@ Partial Class Main
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.TSBLand = New System.Windows.Forms.ToolStripButton()
         Me.OpenToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.TSBDoc = New System.Windows.Forms.ToolStripButton()
         Me.PrintToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.PrintPreviewToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.HelpToolStripButton = New System.Windows.Forms.ToolStripButton()
@@ -221,22 +221,22 @@ Partial Class Main
         'ToolStrip
         '
         Me.ToolStrip.ImageScalingSize = New System.Drawing.Size(50, 50)
-        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSBLand, Me.OpenToolStripButton, Me.SaveToolStripButton, Me.ToolStripSeparator1, Me.PrintToolStripButton, Me.PrintPreviewToolStripButton, Me.ToolStripSeparator2, Me.HelpToolStripButton})
+        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSBLand, Me.OpenToolStripButton, Me.TSBDoc, Me.ToolStripSeparator1, Me.PrintToolStripButton, Me.PrintPreviewToolStripButton, Me.ToolStripSeparator2, Me.HelpToolStripButton})
         Me.ToolStrip.Location = New System.Drawing.Point(0, 30)
         Me.ToolStrip.Name = "ToolStrip"
-        Me.ToolStrip.Size = New System.Drawing.Size(777, 76)
+        Me.ToolStrip.Size = New System.Drawing.Size(777, 73)
         Me.ToolStrip.TabIndex = 6
         Me.ToolStrip.Text = "ToolStrip"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 57)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 73)
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 57)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 73)
         '
         'StatusStrip
         '
@@ -255,32 +255,34 @@ Partial Class Main
         '
         'TSBLand
         '
-        Me.TSBLand.Font = New System.Drawing.Font("Khmer OS System", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TSBLand.Font = New System.Drawing.Font("Khmer OS System", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TSBLand.Image = Global.PeopleLandSolved.My.Resources.Resources.Land
         Me.TSBLand.ImageTransparentColor = System.Drawing.Color.Black
         Me.TSBLand.Name = "TSBLand"
-        Me.TSBLand.Size = New System.Drawing.Size(81, 73)
+        Me.TSBLand.Size = New System.Drawing.Size(70, 70)
         Me.TSBLand.Text = "បញ្ចូលក្បាលដី"
         Me.TSBLand.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal
         Me.TSBLand.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'OpenToolStripButton
         '
-        Me.OpenToolStripButton.Image = CType(resources.GetObject("OpenToolStripButton.Image"), System.Drawing.Image)
+        Me.OpenToolStripButton.Font = New System.Drawing.Font("Khmer OS System", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OpenToolStripButton.Image = Global.PeopleLandSolved.My.Resources.Resources.Document
         Me.OpenToolStripButton.ImageTransparentColor = System.Drawing.Color.Black
         Me.OpenToolStripButton.Name = "OpenToolStripButton"
-        Me.OpenToolStripButton.Size = New System.Drawing.Size(54, 73)
-        Me.OpenToolStripButton.Text = "Open"
+        Me.OpenToolStripButton.Size = New System.Drawing.Size(71, 70)
+        Me.OpenToolStripButton.Text = "ឯកសារបណ្តឹង"
         Me.OpenToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'SaveToolStripButton
+        'TSBDoc
         '
-        Me.SaveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.SaveToolStripButton.Image = CType(resources.GetObject("SaveToolStripButton.Image"), System.Drawing.Image)
-        Me.SaveToolStripButton.ImageTransparentColor = System.Drawing.Color.Black
-        Me.SaveToolStripButton.Name = "SaveToolStripButton"
-        Me.SaveToolStripButton.Size = New System.Drawing.Size(54, 54)
-        Me.SaveToolStripButton.Text = "Save"
+        Me.TSBDoc.Font = New System.Drawing.Font("Khmer OS System", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TSBDoc.Image = Global.PeopleLandSolved.My.Resources.Resources.defult_doc
+        Me.TSBDoc.ImageTransparentColor = System.Drawing.Color.Black
+        Me.TSBDoc.Name = "TSBDoc"
+        Me.TSBDoc.Size = New System.Drawing.Size(88, 70)
+        Me.TSBDoc.Text = "ឯកសារដោះស្រាយ"
+        Me.TSBDoc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'PrintToolStripButton
         '
@@ -288,7 +290,7 @@ Partial Class Main
         Me.PrintToolStripButton.Image = CType(resources.GetObject("PrintToolStripButton.Image"), System.Drawing.Image)
         Me.PrintToolStripButton.ImageTransparentColor = System.Drawing.Color.Black
         Me.PrintToolStripButton.Name = "PrintToolStripButton"
-        Me.PrintToolStripButton.Size = New System.Drawing.Size(54, 54)
+        Me.PrintToolStripButton.Size = New System.Drawing.Size(54, 70)
         Me.PrintToolStripButton.Text = "Print"
         '
         'PrintPreviewToolStripButton
@@ -297,7 +299,7 @@ Partial Class Main
         Me.PrintPreviewToolStripButton.Image = CType(resources.GetObject("PrintPreviewToolStripButton.Image"), System.Drawing.Image)
         Me.PrintPreviewToolStripButton.ImageTransparentColor = System.Drawing.Color.Black
         Me.PrintPreviewToolStripButton.Name = "PrintPreviewToolStripButton"
-        Me.PrintPreviewToolStripButton.Size = New System.Drawing.Size(54, 54)
+        Me.PrintPreviewToolStripButton.Size = New System.Drawing.Size(54, 70)
         Me.PrintPreviewToolStripButton.Text = "Print Preview"
         '
         'HelpToolStripButton
@@ -306,7 +308,7 @@ Partial Class Main
         Me.HelpToolStripButton.Image = CType(resources.GetObject("HelpToolStripButton.Image"), System.Drawing.Image)
         Me.HelpToolStripButton.ImageTransparentColor = System.Drawing.Color.Black
         Me.HelpToolStripButton.Name = "HelpToolStripButton"
-        Me.HelpToolStripButton.Size = New System.Drawing.Size(54, 54)
+        Me.HelpToolStripButton.Size = New System.Drawing.Size(54, 70)
         Me.HelpToolStripButton.Text = "Help"
         '
         'TSMExit
@@ -381,7 +383,7 @@ Partial Class Main
     Friend WithEvents TSBLand As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStrip As System.Windows.Forms.ToolStrip
     Friend WithEvents OpenToolStripButton As System.Windows.Forms.ToolStripButton
-    Friend WithEvents SaveToolStripButton As System.Windows.Forms.ToolStripButton
+    Friend WithEvents TSBDoc As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents TSMExit As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents FileMenu As System.Windows.Forms.ToolStripMenuItem
