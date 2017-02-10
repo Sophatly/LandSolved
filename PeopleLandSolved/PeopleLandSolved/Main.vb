@@ -20,4 +20,37 @@ Public Class Main
         frmC.Show()
 
     End Sub
+
+    Private Sub TSBExit_Click(sender As Object, e As EventArgs) Handles TSBExit.Click
+        Close()
+    End Sub
+
+   
+    Private Sub TSBDocument_Click(sender As Object, e As EventArgs) Handles TSBDocument.Click
+        Dim frmC As New frmDocument
+        frmC.MdiParent = Me
+        frmC.WindowState = FormWindowState.Maximized
+        frmC.Show()
+    End Sub
+
+    Private Sub TSBReport_Click(sender As Object, e As EventArgs) Handles TSBReport.Click
+        Dim frmR As New frmReport
+        frmR.MdiParent = Me
+        frmR.WindowState = FormWindowState.Maximized
+        frmR.Show()
+    End Sub
+
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        Dim frmEDoc As New frmEditDocumentSolved
+        frmEDoc.MdiParent = Me
+        frmEDoc.WindowState = FormWindowState.Maximized
+        frmEDoc.Show()
+    End Sub
+
+    Private Sub TBSEditDocSolved_Click(sender As Object, e As EventArgs) Handles TBSEditDocSolved.Click
+        Dim frmEDocSolved As New frmEditDocSolved
+        frmEDocSolved.MdiParent = Me
+        frmEDocSolved.WindowState = FormWindowState.Maximized
+        frmEDocSolved.Show()
+    End Sub
 End Class

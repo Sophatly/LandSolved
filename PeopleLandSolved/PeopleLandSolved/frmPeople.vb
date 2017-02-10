@@ -28,4 +28,29 @@ Public Class frmPeople
         End Try
 
     End Sub
+
+    Private Sub BtnPeopleID_Click(sender As Object, e As EventArgs) Handles BtnPeopleID.Click
+        Dim t As New Land
+        Dim da As New SqlDataAdapter
+        Dim dt As New DataTable
+        Dim sqlstr As String
+        Dim i As Integer
+        Try
+            t.DBCon()
+            sqlstr = "Select PeopleID from tblPeople"
+            da = New SqlDataAdapter(sqlstr, t.cnn)
+            t.cnn.Open()
+            da.Fill(dt)
+            If dt.Rows.Count > 0 Then
+                For i = 0 To dt.Rows.Count
+                    i = i + 1
+                Next i
+            End If
+            txtPeopleID.Text = i
+            t.cnn.Close()
+        Catch ex As Exception
+            t.cnn.Close()
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class

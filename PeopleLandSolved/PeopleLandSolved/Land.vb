@@ -162,4 +162,63 @@ Public Class Land
         End Try
         Return 0
     End Function
+    Public Function LoadDocument(Doc As ComboBox)
+        Dim sqlstr As String
+        Dim dt As New DataTable
+        Dim da As New SqlDataAdapter
+        DBCon()
+        Try
+            sqlstr = "Select * from tblDocumentType"
+            da = New SqlDataAdapter(sqlstr, cnn)
+            cnn.Open()
+            da.Fill(dt)
+            Doc.DataSource = dt
+            Doc.DisplayMember = "DocumentTypeName"
+            Doc.ValueMember = "DocumentTypeID"
+            cnn.Close()
+        Catch ex As Exception
+            cnn.Close()
+        End Try
+        Return 0
+    End Function
+
+    Public Function LoadDoc(Doc As ComboBox)
+        Dim sqlstr As String
+        Dim dt As New DataTable
+        Dim da As New SqlDataAdapter
+        DBCon()
+        Try
+            sqlstr = "Select * from tblDocumentType"
+            da = New SqlDataAdapter(sqlstr, cnn)
+            cnn.Open()
+            da.Fill(dt)
+            Doc.DataSource = dt
+            Doc.DisplayMember = "DocumentTypeName"
+            Doc.ValueMember = "DocumentTypeID"
+            cnn.Close()
+        Catch ex As Exception
+            cnn.Close()
+        End Try
+        Return 0
+    End Function
+
+    Public Function LoadOfficerName(OfficerName As ComboBox)
+        Dim sqlstr As String
+        Dim dt As New DataTable
+        Dim da As New SqlDataAdapter
+        DBCon()
+        Try
+            sqlstr = "Select * from tblOfficerName"
+            da = New SqlDataAdapter(sqlstr, cnn)
+            cnn.Open()
+            da.Fill(dt)
+            OfficerName.DataSource = dt
+            OfficerName.DisplayMember = "OfficerName"
+            OfficerName.ValueMember = "OfficerNameID"
+            cnn.Close()
+        Catch ex As Exception
+            cnn.Close()
+        End Try
+        Return 0
+    End Function
 End Class
