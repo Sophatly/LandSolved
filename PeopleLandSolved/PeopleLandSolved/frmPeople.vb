@@ -25,6 +25,7 @@ Public Class frmPeople
             t.cnn.Close()
         Catch ex As Exception
             t.cnn.Close()
+            MsgBox(ex.Message)
         End Try
 
     End Sub
@@ -42,7 +43,7 @@ Public Class frmPeople
             t.cnn.Open()
             da.Fill(dt)
             If dt.Rows.Count > 0 Then
-                For i = 0 To dt.Rows.Count
+                For i = 0 To dt.Rows.Count + 1
                     i = i + 1
                 Next i
             End If
