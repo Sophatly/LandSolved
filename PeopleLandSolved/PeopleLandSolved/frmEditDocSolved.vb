@@ -43,9 +43,20 @@ Public Class frmEditDocSolved
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         Dim intIndex As Integer
+        Dim t As New Land
         intIndex = e.RowIndex
         DataGridView1.Rows(intIndex).Selected = True
         txtLandID.Text = DataGridView1.Rows(intIndex).Cells(0).Value
+
+        Try
+            t.DBCon()
+            QryEditDocSolvedTableAdapter.Connection.ConnectionString = t.cnnstr
+            QryEditDocSolvedTableAdapter.Connection.Open()
+            QryEditDocSolvedTableAdapter.FillByDocID(PeopleLandSolveDataSet.qryEditDocSolved, txtLandID.Text)
+            QryEditDocSolvedTableAdapter.Connection.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick

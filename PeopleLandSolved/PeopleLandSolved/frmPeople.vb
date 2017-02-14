@@ -6,7 +6,9 @@ Public Class frmPeople
         Dim frmC As New frmLandInfo
         frmC.MdiParent = Main
         frmC.WindowState = FormWindowState.Maximized
+        frmC.cboPeopleName.SelectedValue = txtPeopleID.Text
         frmC.Show()
+
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
@@ -36,6 +38,7 @@ Public Class frmPeople
         Dim dt As New DataTable
         Dim sqlstr As String
         Dim i As Integer
+        Dim j As Integer
         Try
             t.DBCon()
             sqlstr = "Select PeopleID from tblPeople"
@@ -43,15 +46,13 @@ Public Class frmPeople
             t.cnn.Open()
             da.Fill(dt)
             If dt.Rows.Count > 0 Then
-                For i = 0 To dt.Rows.Count + 1
-                    i = i + 1
-                Next i
+                txtPeopleID.Text = dt(dt.Rows.Count - 1)("PeopleID") + 1
             End If
-            txtPeopleID.Text = i
             t.cnn.Close()
         Catch ex As Exception
             t.cnn.Close()
             MsgBox(ex.Message)
+            txtPeopleID.Text = txtPeopleID.Text + 1
         End Try
     End Sub
 End Class

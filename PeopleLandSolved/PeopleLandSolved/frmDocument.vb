@@ -3,7 +3,11 @@ Imports System.IO
 Public Class frmDocument
 
     Private Sub BtnCancel_Click(sender As Object, e As EventArgs) Handles BtnCancel.Click
+        Dim frmL As New frmLandInfo
+        frmL.MdiParent = Main
+        frmL.WindowState = FormWindowState.Maximized
         Close()
+        frmL.Show()
     End Sub
 
     Private Sub frmDocument_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -43,26 +47,6 @@ Public Class frmDocument
         intIndex = e.RowIndex
         DataGridView1.Rows(intIndex).Selected = True
         txtLandID.Text = DataGridView1.Rows(intIndex).Cells(0).Value
-        Dim sqlstr As String
-        Dim da As New SqlDataAdapter
-        Dim dt As New DataTable
-        Dim img() As Byte
-        Dim t As New Land
-        Try
-            t.DBCon()
-            sqlstr = "Select PicLand from tblLand Where LandID=" & txtLandID.Text
-            da = New SqlDataAdapter(sqlstr, t.cnn)
-            t.cnn.Open()
-            da.Fill(dt)
-            img = dt(0)("PicLand")
-            Dim ms As New MemoryStream(img)
-            PictureBox1.Image = Image.FromStream(ms)
-            t.cnn.Close()
-        Catch ex As Exception
-            t.cnn.Close()
-            MsgBox(ex.Message)
-        End Try
-        
     End Sub
 
     
@@ -93,6 +77,7 @@ Public Class frmDocument
             t.cnn.Close()
             MsgBox(ex.Message)
         End Try
+        
     End Sub
 
     Private Sub BtnSavePeopleDoc_Click(sender As Object, e As EventArgs) Handles BtnSavePeopleDoc.Click

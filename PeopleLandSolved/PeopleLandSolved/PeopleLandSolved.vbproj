@@ -110,6 +110,18 @@
     <Compile Include="frmReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmReportDetail.Designer.vb">
+      <DependentUpon>frmReportDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTesting.Designer.vb">
+      <DependentUpon>frmTesting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTesting.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Land.vb" />
     <Compile Include="Main.Designer.vb">
       <DependentUpon>Main.vb</DependentUpon>
@@ -157,6 +169,12 @@
     <EmbeddedResource Include="frmReport.resx">
       <DependentUpon>frmReport.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportDetail.resx">
+      <DependentUpon>frmReportDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTesting.resx">
+      <DependentUpon>frmTesting.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +185,8 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="rptTesting.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">

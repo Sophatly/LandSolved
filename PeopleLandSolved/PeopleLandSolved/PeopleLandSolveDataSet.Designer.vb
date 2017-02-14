@@ -510,12 +510,6 @@ Partial Public Class PeopleLandSolveDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function FindByLandID(ByVal LandID As Integer) As qryPeopleSearchRow
-            Return CType(Me.Rows.Find(New Object() {LandID}), qryPeopleSearchRow)
-        End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As qryPeopleSearchDataTable = CType(MyBase.Clone, qryPeopleSearchDataTable)
             cln.InitVars()
@@ -548,9 +542,7 @@ Partial Public Class PeopleLandSolveDataSet
             MyBase.Columns.Add(Me.columnLandSize)
             Me.columnLandSizeTrue = New Global.System.Data.DataColumn("LandSizeTrue", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnLandSizeTrue)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnLandID}, True))
             Me.columnLandID.AllowDBNull = False
-            Me.columnLandID.Unique = True
             Me.columnPeopleName.MaxLength = 50
         End Sub
 
@@ -711,6 +703,12 @@ Partial Public Class PeopleLandSolveDataSet
 
         Private columnEvaluationName As Global.System.Data.DataColumn
 
+        Private columnIRCNum As Global.System.Data.DataColumn
+
+        Private columnPeopleID As Global.System.Data.DataColumn
+
+        Private columnLandID As Global.System.Data.DataColumn
+
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
@@ -835,6 +833,30 @@ Partial Public Class PeopleLandSolveDataSet
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property IRCNumColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIRCNum
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property PeopleIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPeopleID
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property LandIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLandID
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -871,9 +893,9 @@ Partial Public Class PeopleLandSolveDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddqryReportRow(ByVal PeopleName As String, ByVal DocumentTypeName As String, ByVal DocPeople As String, ByVal LandSize As Double, ByVal LandSizeTrue As Double, ByVal DocNum As String, ByVal YearPeopleDoc As Integer, ByVal VillagePeople As String, ByVal VillageName As String, ByVal SuggestionName As String, ByVal EvaluationName As String) As qryReportRow
+        Public Overloads Function AddqryReportRow(ByVal PeopleName As String, ByVal DocumentTypeName As String, ByVal DocPeople As String, ByVal LandSize As Double, ByVal LandSizeTrue As Double, ByVal DocNum As String, ByVal YearPeopleDoc As Integer, ByVal VillagePeople As String, ByVal VillageName As String, ByVal SuggestionName As String, ByVal EvaluationName As String, ByVal IRCNum As String, ByVal PeopleID As Integer, ByVal LandID As Integer) As qryReportRow
             Dim rowqryReportRow As qryReportRow = CType(Me.NewRow, qryReportRow)
-            Dim columnValuesArray() As Object = New Object() {PeopleName, DocumentTypeName, DocPeople, LandSize, LandSizeTrue, DocNum, YearPeopleDoc, VillagePeople, VillageName, SuggestionName, EvaluationName}
+            Dim columnValuesArray() As Object = New Object() {PeopleName, DocumentTypeName, DocPeople, LandSize, LandSizeTrue, DocNum, YearPeopleDoc, VillagePeople, VillageName, SuggestionName, EvaluationName, IRCNum, PeopleID, LandID}
             rowqryReportRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowqryReportRow)
             Return rowqryReportRow
@@ -907,6 +929,9 @@ Partial Public Class PeopleLandSolveDataSet
             Me.columnVillageName = MyBase.Columns("VillageName")
             Me.columnSuggestionName = MyBase.Columns("SuggestionName")
             Me.columnEvaluationName = MyBase.Columns("EvaluationName")
+            Me.columnIRCNum = MyBase.Columns("IRCNum")
+            Me.columnPeopleID = MyBase.Columns("PeopleID")
+            Me.columnLandID = MyBase.Columns("LandID")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -934,6 +959,12 @@ Partial Public Class PeopleLandSolveDataSet
             MyBase.Columns.Add(Me.columnSuggestionName)
             Me.columnEvaluationName = New Global.System.Data.DataColumn("EvaluationName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnEvaluationName)
+            Me.columnIRCNum = New Global.System.Data.DataColumn("IRCNum", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIRCNum)
+            Me.columnPeopleID = New Global.System.Data.DataColumn("PeopleID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPeopleID)
+            Me.columnLandID = New Global.System.Data.DataColumn("LandID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnLandID)
             Me.columnPeopleName.MaxLength = 50
             Me.columnDocumentTypeName.MaxLength = 255
             Me.columnDocPeople.MaxLength = 255
@@ -942,6 +973,9 @@ Partial Public Class PeopleLandSolveDataSet
             Me.columnVillageName.MaxLength = 255
             Me.columnSuggestionName.MaxLength = 50
             Me.columnEvaluationName.MaxLength = 500
+            Me.columnIRCNum.MaxLength = 500
+            Me.columnPeopleID.AllowDBNull = False
+            Me.columnLandID.AllowDBNull = False
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -1211,12 +1245,6 @@ Partial Public Class PeopleLandSolveDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function FindByLandID(ByVal LandID As Integer) As qryDocPeopleRow
-            Return CType(Me.Rows.Find(New Object() {LandID}), qryDocPeopleRow)
-        End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Overrides Function Clone() As Global.System.Data.DataTable
             Dim cln As qryDocPeopleDataTable = CType(MyBase.Clone, qryDocPeopleDataTable)
             cln.InitVars()
@@ -1252,9 +1280,7 @@ Partial Public Class PeopleLandSolveDataSet
             MyBase.Columns.Add(Me.columnYearPeopleDoc)
             Me.columnDocPeopleID = New Global.System.Data.DataColumn("DocPeopleID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDocPeopleID)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnLandID}, True))
             Me.columnLandID.AllowDBNull = False
-            Me.columnLandID.Unique = True
             Me.columnDocumentTypeName.MaxLength = 255
             Me.columnDocPeopleNum.MaxLength = 500
             Me.columnDocPeopleID.AllowDBNull = False
@@ -1999,6 +2025,43 @@ Partial Public Class PeopleLandSolveDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property IRCNum() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableqryReport.IRCNumColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IRCNum' in table 'qryReport' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableqryReport.IRCNumColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property PeopleID() As Integer
+            Get
+                Return CType(Me(Me.tableqryReport.PeopleIDColumn), Integer)
+            End Get
+            Set(value As Integer)
+                Me(Me.tableqryReport.PeopleIDColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property LandID() As Integer
+            Get
+                Return CType(Me(Me.tableqryReport.LandIDColumn), Integer)
+            End Get
+            Set(value As Integer)
+                Me(Me.tableqryReport.LandIDColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function IsPeopleNameNull() As Boolean
             Return Me.IsNull(Me.tableqryReport.PeopleNameColumn)
         End Function
@@ -2127,6 +2190,18 @@ Partial Public Class PeopleLandSolveDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetEvaluationNameNull()
             Me(Me.tableqryReport.EvaluationNameColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsIRCNumNull() As Boolean
+            Return Me.IsNull(Me.tableqryReport.IRCNumColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetIRCNumNull()
+            Me(Me.tableqryReport.IRCNumColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 
@@ -2896,6 +2971,9 @@ Namespace PeopleLandSolveDataSetTableAdapters
             tableMapping.ColumnMappings.Add("VillageName", "VillageName")
             tableMapping.ColumnMappings.Add("SuggestionName", "SuggestionName")
             tableMapping.ColumnMappings.Add("EvaluationName", "EvaluationName")
+            tableMapping.ColumnMappings.Add("IRCNum", "IRCNum")
+            tableMapping.ColumnMappings.Add("PeopleID", "PeopleID")
+            tableMapping.ColumnMappings.Add("LandID", "LandID")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
 
@@ -2912,7 +2990,9 @@ Namespace PeopleLandSolveDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        qryReport.*" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            qryReport"
+            Me._commandCollection(0).CommandText = "SELECT        PeopleName, DocumentTypeName, DocPeople, LandSize, LandSizeTrue, Do" & _
+                "cNum, YearPeopleDoc, VillagePeople, VillageName, SuggestionName, EvaluationName," & _
+                " IRCNum, PeopleID, LandID" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            qryReport"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
 

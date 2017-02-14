@@ -39,10 +39,10 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="qryReportTableAdapter" GeneratorDataComponentClassName="qryReportTableAdapter" Name="qryReport" UserDataComponentName="qryReportTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="PeopleLandSolveConnectionString (MySettings)" DbObjectName="PeopleLandSolve.dbo.qryReport" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="PeopleLandSolveConnectionString (MySettings)" DbObjectName="PeopleLandSolve.dbo.qryReport" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        qryReport.*
+                    <CommandText>SELECT        PeopleName, DocumentTypeName, DocPeople, LandSize, LandSizeTrue, DocNum, YearPeopleDoc, VillagePeople, VillageName, SuggestionName, EvaluationName, IRCNum, PeopleID, LandID
 FROM            qryReport</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -61,6 +61,9 @@ FROM            qryReport</CommandText>
               <Mapping SourceColumn="VillageName" DataSetColumn="VillageName" />
               <Mapping SourceColumn="SuggestionName" DataSetColumn="SuggestionName" />
               <Mapping SourceColumn="EvaluationName" DataSetColumn="EvaluationName" />
+              <Mapping SourceColumn="IRCNum" DataSetColumn="IRCNum" />
+              <Mapping SourceColumn="PeopleID" DataSetColumn="PeopleID" />
+              <Mapping SourceColumn="LandID" DataSetColumn="LandID" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -217,6 +220,15 @@ WHERE        (DocID = @Param)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="IRCNum" msprop:Generator_ColumnVarNameInTable="columnIRCNum" msprop:Generator_ColumnPropNameInRow="IRCNum" msprop:Generator_ColumnPropNameInTable="IRCNumColumn" msprop:Generator_UserColumnName="IRCNum" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PeopleID" msprop:Generator_ColumnVarNameInTable="columnPeopleID" msprop:Generator_ColumnPropNameInRow="PeopleID" msprop:Generator_ColumnPropNameInTable="PeopleIDColumn" msprop:Generator_UserColumnName="PeopleID" type="xs:int" />
+              <xs:element name="LandID" msprop:Generator_ColumnVarNameInTable="columnLandID" msprop:Generator_ColumnPropNameInRow="LandID" msprop:Generator_ColumnPropNameInTable="LandIDColumn" msprop:Generator_UserColumnName="LandID" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -275,13 +287,5 @@ WHERE        (DocID = @Param)</CommandText>
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:qryPeopleSearch" />
-      <xs:field xpath="mstns:LandID" />
-    </xs:unique>
-    <xs:unique name="qryDocPeople_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:qryDocPeople" />
-      <xs:field xpath="mstns:LandID" />
-    </xs:unique>
   </xs:element>
 </xs:schema>
