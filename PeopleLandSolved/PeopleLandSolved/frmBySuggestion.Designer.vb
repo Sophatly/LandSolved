@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmReport
+Partial Class frmBySuggestion
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -24,18 +24,18 @@ Partial Class frmReport
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.qryReportBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.qryBySuggestionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PeopleLandSolveDataSet = New PeopleLandSolved.PeopleLandSolveDataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.qryReportTableAdapter = New PeopleLandSolved.PeopleLandSolveDataSetTableAdapters.qryReportTableAdapter()
-        CType(Me.qryReportBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.qryBySuggestionTableAdapter = New PeopleLandSolved.PeopleLandSolveDataSetTableAdapters.qryBySuggestionTableAdapter()
+        CType(Me.qryBySuggestionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PeopleLandSolveDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'qryReportBindingSource
+        'qryBySuggestionBindingSource
         '
-        Me.qryReportBindingSource.DataMember = "qryReport"
-        Me.qryReportBindingSource.DataSource = Me.PeopleLandSolveDataSet
+        Me.qryBySuggestionBindingSource.DataMember = "qryBySuggestion"
+        Me.qryBySuggestionBindingSource.DataSource = Me.PeopleLandSolveDataSet
         '
         'PeopleLandSolveDataSet
         '
@@ -44,36 +44,34 @@ Partial Class frmReport
         '
         'ReportViewer1
         '
-        Me.ReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.None
         ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Me.qryReportBindingSource
+        ReportDataSource1.Value = Me.qryBySuggestionBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "PeopleLandSolved.Report1.rdlc"
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "PeopleLandSolved.rptbySuggestion.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(12, 12)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(1338, 550)
+        Me.ReportViewer1.Size = New System.Drawing.Size(1083, 510)
         Me.ReportViewer1.TabIndex = 0
         '
-        'qryReportTableAdapter
+        'qryBySuggestionTableAdapter
         '
-        Me.qryReportTableAdapter.ClearBeforeFill = True
+        Me.qryBySuggestionTableAdapter.ClearBeforeFill = True
         '
-        'frmReport
+        'frmBySuggestion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1362, 574)
+        Me.ClientSize = New System.Drawing.Size(1107, 534)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Name = "frmReport"
-        Me.Text = "តារាងសង្ខេបរួម"
-        CType(Me.qryReportBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Name = "frmBySuggestion"
+        Me.Text = "frmBySuggestion"
+        CType(Me.qryBySuggestionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PeopleLandSolveDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
-    Friend WithEvents qryReportBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents qryBySuggestionBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents PeopleLandSolveDataSet As PeopleLandSolved.PeopleLandSolveDataSet
-    Friend WithEvents qryReportTableAdapter As PeopleLandSolved.PeopleLandSolveDataSetTableAdapters.qryReportTableAdapter
+    Friend WithEvents qryBySuggestionTableAdapter As PeopleLandSolved.PeopleLandSolveDataSetTableAdapters.qryBySuggestionTableAdapter
 End Class

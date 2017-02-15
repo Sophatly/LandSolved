@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBySuggestion.Designer.vb">
+      <DependentUpon>frmBySuggestion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBySuggestion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmDocument.Designer.vb">
       <DependentUpon>frmDocument.vb</DependentUpon>
     </Compile>
@@ -102,6 +108,12 @@
       <DependentUpon>frmPeople.vb</DependentUpon>
     </Compile>
     <Compile Include="frmPeople.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPicPath.Designer.vb">
+      <DependentUpon>frmPicPath.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPicPath.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmReport.Designer.vb">
@@ -151,6 +163,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmBySuggestion.resx">
+      <DependentUpon>frmBySuggestion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDocument.resx">
       <DependentUpon>frmDocument.vb</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPeople.resx">
       <DependentUpon>frmPeople.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPicPath.resx">
+      <DependentUpon>frmPicPath.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReport.resx">
       <DependentUpon>frmReport.vb</DependentUpon>
@@ -186,6 +204,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="rptbySuggestion.rdlc" />
     <EmbeddedResource Include="rptTesting.rdlc" />
   </ItemGroup>
   <ItemGroup>
@@ -231,6 +250,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ICN_EDIT.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Documents.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\my-pictures-4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

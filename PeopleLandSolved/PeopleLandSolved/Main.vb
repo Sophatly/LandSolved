@@ -62,4 +62,19 @@ Public Class Main
         frmEDocSolved.WindowState = FormWindowState.Maximized
         frmEDocSolved.Show()
     End Sub
+
+    Private Sub TBSBySuggestion_Click(sender As Object, e As EventArgs) Handles TBSBySuggestion.Click
+        Dim frmBySug As New frmBySuggestion
+        frmBySug.MdiParent = Me
+        frmBySug.WindowState = FormWindowState.Maximized
+        frmBySug.Show()
+    End Sub
+
+    Private Sub TSBMapPath_Click(sender As Object, e As EventArgs) Handles TSBMapPath.Click
+        Dim frmPicPath As New frmPicPath
+        frmPicPath.MdiParent = Me
+        frmPicPath.WindowState = FormWindowState.Maximized
+        frmPicPath.Show()
+
+    End Sub
 End Class

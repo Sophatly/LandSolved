@@ -59,6 +59,8 @@ Partial Class Main
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.TBSEditDocSolved = New System.Windows.Forms.ToolStripButton()
         Me.TSBReport = New System.Windows.Forms.ToolStripButton()
+        Me.TBSBySuggestion = New System.Windows.Forms.ToolStripButton()
+        Me.TSBMapPath = New System.Windows.Forms.ToolStripButton()
         Me.TSBExit = New System.Windows.Forms.ToolStripButton()
         Me.TSMExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.IndexToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -222,7 +224,7 @@ Partial Class Main
         'ToolStrip
         '
         Me.ToolStrip.ImageScalingSize = New System.Drawing.Size(50, 50)
-        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSBLand, Me.TSBDocument, Me.ToolStripSeparator1, Me.ToolStripButton1, Me.TBSEditDocSolved, Me.ToolStripSeparator3, Me.TSBReport, Me.ToolStripSeparator2, Me.TSBExit})
+        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSBLand, Me.TSBDocument, Me.ToolStripSeparator1, Me.ToolStripButton1, Me.TBSEditDocSolved, Me.ToolStripSeparator3, Me.TSBReport, Me.TBSBySuggestion, Me.ToolStripSeparator2, Me.TSBMapPath, Me.TSBExit})
         Me.ToolStrip.Location = New System.Drawing.Point(0, 30)
         Me.ToolStrip.Name = "ToolStrip"
         Me.ToolStrip.Size = New System.Drawing.Size(777, 75)
@@ -306,9 +308,29 @@ Partial Class Main
         Me.TSBReport.Image = Global.PeopleLandSolved.My.Resources.Resources.Report_All
         Me.TSBReport.ImageTransparentColor = System.Drawing.Color.Black
         Me.TSBReport.Name = "TSBReport"
-        Me.TSBReport.Size = New System.Drawing.Size(62, 72)
-        Me.TSBReport.Text = "របាយការណ៍"
+        Me.TSBReport.Size = New System.Drawing.Size(72, 72)
+        Me.TSBReport.Text = "របាយការណ៍រួម"
         Me.TSBReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'TBSBySuggestion
+        '
+        Me.TBSBySuggestion.Font = New System.Drawing.Font("Khmer OS System", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBSBySuggestion.Image = Global.PeopleLandSolved.My.Resources.Resources.Documents
+        Me.TBSBySuggestion.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.TBSBySuggestion.Name = "TBSBySuggestion"
+        Me.TBSBySuggestion.Size = New System.Drawing.Size(76, 72)
+        Me.TBSBySuggestion.Text = "តាមការសន្និដ្ឋាន"
+        Me.TBSBySuggestion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'TSBMapPath
+        '
+        Me.TSBMapPath.Font = New System.Drawing.Font("Khmer OS System", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TSBMapPath.Image = Global.PeopleLandSolved.My.Resources.Resources.my_pictures_4
+        Me.TSBMapPath.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.TSBMapPath.Name = "TSBMapPath"
+        Me.TSBMapPath.Size = New System.Drawing.Size(54, 72)
+        Me.TSBMapPath.Text = "ផ្ទូកផែនទី"
+        Me.TSBMapPath.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'TSBExit
         '
@@ -406,5 +428,7 @@ Partial Class Main
     Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents TBSEditDocSolved As System.Windows.Forms.ToolStripButton
+    Friend WithEvents TBSBySuggestion As System.Windows.Forms.ToolStripButton
+    Friend WithEvents TSBMapPath As System.Windows.Forms.ToolStripButton
 
 End Class

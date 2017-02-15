@@ -50,7 +50,7 @@ Partial Class frmReportDetail
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "PeopleLandSolved.Report2.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(20, 22)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(1222, 556)
+        Me.ReportViewer1.Size = New System.Drawing.Size(1330, 556)
         Me.ReportViewer1.TabIndex = 0
         '
         'qryReportTableAdapter
@@ -61,7 +61,7 @@ Partial Class frmReportDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1254, 590)
+        Me.ClientSize = New System.Drawing.Size(1362, 590)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "frmReportDetail"
         Me.Text = "frmReportDetial"

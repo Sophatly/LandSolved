@@ -55,4 +55,62 @@ Public Class frmPeople
             txtPeopleID.Text = txtPeopleID.Text + 1
         End Try
     End Sub
+
+    Private Sub frmPeople_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim t As New Land
+        t.DBCon()
+        'TODO: This line of code loads data into the 'PeopleLandSolveDataSet.qryPeopleSearch' table. You can move, or remove it, as needed.
+        QryPeopleTableAdapter.Connection.ConnectionString = t.cnnstr
+        QryPeopleTableAdapter.Connection.Open()
+        Me.QryPeopleTableAdapter.Fill(Me.PeopleLandSolveDataSet.qryPeople)
+        QryPeopleTableAdapter.Connection.Close()
+
+        DataGridView1.Font = New Font("Khmer OS System", 9)
+        DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        QryPeopleTableAdapter.FillByPeopleName(PeopleLandSolveDataSet.qryPeople, TextBox1.Text & "%")
+
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+        Dim intIndex As Integer
+        Dim i As Integer
+        intIndex = e.RowIndex
+        DataGridView1.Rows(intIndex).Selected = True
+        i = DataGridView1.Rows(intIndex).Cells(0).Value
+        txtPeopleID.Text = i
+
+    End Sub
+
+    Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles BtnUpdate.Click
+        Dim sqlcom As New SqlCommand
+        Dim sqlstr As String
+        Dim t As New Land
+        Try
+            t.DBCon()
+            sqlstr = "UPDATE tblPeople SET PeopleName=@PeopleName Where PeopleID=" & txtPeopleID.Text
+            sqlcom = New SqlCommand(sqlstr, t.cnn)
+            t.cnn.Open()
+            sqlcom.Parameters.AddWithValue("@PeopleName", txtPeopleName.Text)
+            sqlcom.ExecuteNonQuery()
+            MsgBox("ព័ត៌មានត្រូវបានកែប្រែរួចរាល់")
+            t.cnn.Close()
+        Catch ex As Exception
+            t.cnn.Close()
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        Dim i As Integer
+        Dim intIndex As Integer
+        intIndex = e.RowIndex
+        DataGridView1.Rows(intIndex).Selected = True
+        i = DataGridView1.Rows(intIndex).Cells(0).Value
+        txtPeopleID.Text = i
+
+    End Sub
 End Class
